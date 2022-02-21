@@ -1354,7 +1354,7 @@
 			return e.address === v
 		})); - 1 != n && (c.serverSelect.selectedIndex = n, Object(c.updateSelectedServer)(!1)), I = !0, R = t, console.log("Respawning in server: ".concat(v)), O = "Connecting...", S()
 	}
-	var B = window.location.protocol.replace("http", "ws") + "//" + window.location.host;
+	/*var B = window.location.protocol.replace("http", "ws") + "//" + window.location.host;
 	! function e(t) {
 		(m = new WebSocket(t + "/ws")).binaryType = "arraybuffer", m.addEventListener("open", (function() {
 			m.sendMessage = function(e, t) {
@@ -1383,7 +1383,7 @@
 					Object(c.recieveServers)(a)
 			}
 		}))
-	}(B);
+	}(B);*/
 	var D = function(e) {
 		for (var t = 0, n = Object.entries(e); t < n.length; t++) {
 			var r = p(n[t], 2),
@@ -1597,7 +1597,7 @@
 	})), _shared_editorconstants__WEBPACK_IMPORTED_MODULE_2__.VISUAL_TEAMS.forEach((function(e) {
 		var t = addChild(visualTeamSelect, "option");
 		t.value = e.value, t.innerText = e.name
-	})), weaponCameraSizeMultiplierInput.onchange = function() {
+	})), weaponCameraSizeMultiplierInput.onchange = function() {	// FOV?
 		currentWeapon.cameraSizeMultiplier = validateNumberAttribute(simplifyNumberInput(weaponCameraSizeMultiplierInput.value), 1), weaponCameraSizeMultiplierInput.value = Math.max(.1, currentWeapon.cameraSizeMultiplier), Object(_networking__WEBPACK_IMPORTED_MODULE_6__.updateWeapon)(), weaponUpdate()
 	}, bodyCameraSizeMultiplierInput.onchange = function() {
 		currentBody.cameraSizeMultiplier = validateNumberAttribute(simplifyNumberInput(bodyCameraSizeMultiplierInput.value), 1), bodyCameraSizeMultiplierInput.value = Math.max(.1, currentBody.cameraSizeMultiplier), Object(_networking__WEBPACK_IMPORTED_MODULE_6__.updateBody)(), bodyUpdate()
