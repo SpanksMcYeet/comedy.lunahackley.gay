@@ -1,6 +1,6 @@
 let q = ['n', 'i', 'g', 'g', 'e', 'r', 'b', 'e', 'a', 'n', 'e', 'r']
 let c = []
-let enabledRacism = false
+let e = false
 let secret = document.getElementById("bypass")
 secret.style.display = "none"
 window.onkeydown = event => {
@@ -94,7 +94,7 @@ document.getElementById("beanerButton").addEventListener("click", () => {
     0.1, 0.3, 1, 0.4, 0.2, 0.75,
     v(2),
     u(p(b.w), 0.4),
-    u(n(p(b.n), 0.1, 8), 0.4),
+    u(n(p(b.n), 0.25, 8), 0.4),
     u(p(b.s), 0.4),
     p(b.f),
     v(7)
