@@ -29,11 +29,12 @@ let bA = {
   n: ['🅽', 'Ⓝ', 'ⓝ', '𐌽', 'Ṇ', 'η', 'Ｎ', 'ｎ', 'ᑎ', 'Ň', 'ภ', 'η', 'ή', 'Ň', 'Ɲ', '𝔫', '𝓷', '𝓃', '𝓝', '𝐍', '𝐧', 'ℕ', '𝕟', 'ᶰ', 'n', 'ո', 'ռ', 'ｎ', '𝐧', '𝑛', '𝒏', '𝓃', '𝓷', '𝔫', '𝕟', '𝖓', '𝗇', '𝗻', '𝘯', '𝙣', '𝚗', 'N', 'ɴ', 'Ν', 'ℕ', 'Ⲛ', 'ꓠ', 'Ｎ'],
   r: ['🆁', 'Ⓡ', 'ⓡ', '𐍂', 'Ṝ', 'я', 'Ｒ', 'ｒ', 'ᖇ', 'Ř', 'г', 'я', 'ŕ', 'Ř', 'Ɍ', '𝔯', '𝓻', '𝓇', '𝓡', '𝐑', '𝐫', 'ℝ', '𝕣', 'ʳ', 'ɹ', 'R', 'Ʀ', 'ʀ', 'Ꭱ', 'Ꮢ', 'ᖇ', 'ᚱ', 'ℛ', 'ℜ', 'ℝ', 'ꓣ', 'ꭱ', 'ꮢ', 'Ｒ', '𐒴', 'r', 'г', 'ᴦ', 'ⲅ', 'ꭇ', 'ꭈ', 'ꮁ', 'ｒ', '𝐫', '𝑟', '𝒓', '𝓇', '𝓻', '𝔯', '𝕣', '𝖗', '𝗋', '𝗿', '𝘳', '𝙧', '𝚛']
 }
-let r = (m, d) => d ? Math.floor(Math.random() * m) : Math.random() < m
-let p = a => a[Math.floor(Math.random() * a.length)]
-let u = (w, c) => r(c) ? w.toUpperCase() : w
-let s = (x, c, i, h, t) => i.match(x) && r(c) ? i += h : i += t
-let i = (a, i, n) => [...a.slice(0, i), n, ...a.slice(i)]
+const r = (m, v) => v ? Math.floor(Math.random() * m) : Math.random() < m
+const p = a => a[Math.floor(Math.random() * a.length)]
+const u = (w, c) => r(c) ? w.toUpperCase() : w
+const s = (l, c, i, a, o) => i.match(l) && r(c) ? i += a : i += o
+const i = (a, i, n) => [...a.slice(0, i), n, ...a.slice(i)]
+//const space = amount => ' '.repeat(ran(amount, true))
 document.getElementById("bypassNGen").addEventListener("click", () => {
   let rN = l => {
     let rNg = a => {
@@ -71,36 +72,47 @@ document.getElementById("bypassBGen").addEventListener("click", () => {
   document.getElementById("showBBypass").innerHTML = b
 })
 document.getElementById("beanerButton").addEventListener("click", () => {
-  let b = {
-    c: ['}', '{', '+', '`', '/', '\'', 'ç'],
-    w: ['hola', 'equipo', 'gato', 'pero', 'viva', 'pro', 'dejas', 'paja', 'puto', 'es mal', 'gordo', 'morir', 'madre', 'gg', 'xX', 'spain', 'portugal', '[GD]'],
-    f: [':v', ':V', '>:V', '>:v', ':c', ':C'],
-    s: ['el crak', 'elcrak', 'elcrack', 'el crack', 'puta madre', 'muy gordo', 'soy tu mal', 'equipo pro', 'tengo pro', 'es amigo?', 'jajaja', 'xd', 'xxx', '    ', 'caca!!', 'gg', 'depressões', 'pene'],
-    n: ['FeZtIvAl', 'fezti', 'ronaldo', 'ssundee', 'alfonso', 'alfredo', 'aberto', 'balzac', 'hugo', 'lola', 'mateo', 'marco', 'joaquin', 'leonardo', 'rafael', 'lorenzo', 'diego', 'antonio', 'cruz', 'francisco', 'carlos', 'matias', 'miguel', 'mario', 'pablo', 'carlo', 'rico', 'diablo', 'jose', 'carmen', 'nacho', 'paco', 'manuel', 'juan', 'matheo', 'sergio', 'eduardo', 'pedro', 'ricardo', 'gustavo', 'esteban', 'rodrigo', 'leon', 'felipe', 'jorge', 'felice', 'ernesto']
-  }
-  let o = ''
-  let v = (l) => {
-    let c = ''
-    for (let i = 0; i < l; i++)
-      c = s(/[}{+]$/g, 0.6, c, '+', p(b.c))
-    return c
-  }
-  let n = (e, c, x) => {
-    let a = e.split("")
-    let s = ' '
-    return Math.random() <= c ? i(a, a.indexOf(p(a)), s.repeat(r(x + 1, true))).join('') : e
-  }
-  let c = [
-    0.1, 0.3, 1, 0.4, 0.2, 0.75,
-    v(2),
-    u(p(b.w), 0.4),
-    u(n(p(b.n), 0.25, 8), 0.4),
-    u(p(b.s), 0.4),
-    p(b.f),
-    v(7)
-  ]
-  for (let i of c)
-    o += r(i) ? ` ${c[c.indexOf(i)+6]}` : ''
-  o.slice(o.length - (o.length - 1))
-  document.getElementById("showBean").innerHTML = o
+    let b = {
+        c: ['}', '{', '+', '`', '/', '\'', 'ç', ' '],
+        w: ['hola', 'equipo', 'gato', 'pero', 'viva', 'pro', 'dejas', 'paja', 'puto', 'es mal', 'gordo', 'morir', 'madre', 'gg', 'xX', 'spain', 'portugal', '[GD]'],
+        f: [':v', ':V', '>:V', '>:v', ':c', ':C', 'XD'],
+        s: ['el crak', 'elcrak', 'elcrack', 'el crack', 'puta madre', 'muy gordo', 'soy tu mal', 'equipo pro', 'tengo pro', 'es amigo?', 'jajaja', 'xd', 'xxx', '    ', 'caca!!', 'gg', 'depressões'],
+        n: ['ronaldo', 'ssundee', 'alfonso', 'alfredo', 'aberto', 'balzac', 'hugo', 'lola', 'mateo', 'marco', 'joaquin', 'leonardo', 'rafael', 'lorenzo', 'diego', 'antonio', 'cruz', 'francisco', 'carlos', 'matias', 'miguel', 'mario', 'pablo', 'carlo', 'rico', 'diablo', 'jose', 'carmen', 'nacho', 'paco', 'manuel', 'juan', 'matheo', 'sergio', 'eduardo', 'pedro', 'ricardo', 'gustavo', 'esteban', 'rodrigo', 'leon', 'felipe', 'jorge', 'felice', 'ernesto'],
+        //space: ['[]', '[}', '{}', '()', ']', '[', ']', '}', '{', ')', '(', '.', ',', '%', '%%', '`', '?', '!', '>', '<', '', '_', '/', '\\', `${space(5)}`]
+    }
+    let o = ''
+    let v = l => {
+        let c = ''
+        for (let i = 0; i < l; i++)
+            c = s(/[}{+]$/g, 0.6, c, '+', p(b.c))
+        return c
+    }
+    let n = (e, c, a) => {
+        let k = e.split('')
+        let g = ' '
+        return r(c) ? i(k, k.indexOf(p(k)), g.repeat(r(a, true))).join('') : e
+    }
+    let h = (s, c) => {
+        w = u(s, 0.4)
+        let m = s.split('')
+        w = ''
+        for (let i of m)
+            w += r(c) ? i.toUpperCase() : i
+        return w
+    }
+    let c = [
+      0.1, 0.3, 0.8, 0.4, 0.2, 0.75,
+      v(2),
+      h(p(b.w), 0.4),
+      n(r(0.2) ? h(p(b.n), 0.4) : p(b.n), 0.2, 5),
+      h(p(b.s), 0.4),
+      p(b.f),
+      v(7)
+    ]
+    
+    for (let i of c) {
+      o += r(i) ? ` ${c[c.indexOf(i)+6]}` : ''
+    }
+    o.slice(o.length - (o.length - 1))
+    document.getElementById("showBean").innerHTML = o
 })
