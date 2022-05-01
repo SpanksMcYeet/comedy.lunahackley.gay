@@ -3,7 +3,6 @@ import Unicode from './charList.js'
 document.getElementById('generateBypass').addEventListener('click', () => {
   document.getElementById('showBypass').innerHTML = ''
   let desiredBypass = document.getElementById('inputBypass').value
-  desiredBypass.split('')
   for (let letter of desiredBypass) {
     let desiredChars = Unicode[letter.toUpperCase()]
     let desiredCharacter = desiredChars[Math.floor(Math.random() * desiredChars.length)]
