@@ -1,5 +1,5 @@
 (async () => {
-  const characters = await fetch('https://lunahackley.gay/charList.json')
+  const characters = await fetch('./charList.json')
   const CHAR = await characters.json()
   document.getElementById('generateBypass').addEventListener('click', () => {
     document.getElementById('showBypass').innerHTML = ''
