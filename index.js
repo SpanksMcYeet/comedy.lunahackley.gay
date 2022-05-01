@@ -8,6 +8,6 @@ document.getElementById('generateBypass').addEventListener('click', () => {
     let desiredCharacter = desiredChars[Math.floor(Math.random() * desiredChars.length)]
     if (desiredChars === null)
       console.log(`Unable to find bypassable character for character ${letter}`)
-    document.getElementById('showBypass').innerHTML += desiredCharacter//String.fromCodePoint(parseInt(desiredCharacter, 16))
+    document.getElementById('showBypass').innerHTML += desiredCharacter
   }
 })
