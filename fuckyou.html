@@ -3,20 +3,26 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        p {
+        p1 {
             text-align: center;
             font-size: 60px;
             margin-top: 0px;
+        }
+        p2 {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20px;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <p id="demo"></p>
+    <p1 id="demo"></p1>
     <script>
         $.getJSON("https://api.ipify.org/?format=json", data => {
             document.getElementById("demo").innerHTML = `Compelling argument. However, ${data.ip}`
         })
     </script>
+    <p2>(Don't worry, this doesn't store your IP lol)</p2>
 </body>
 </html>
