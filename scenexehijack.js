@@ -48,7 +48,7 @@
     function (e, t) {
         e.exports = Object.freeze({
             COMMAND_PREFIX: "/",
-            CAMERA_SHAKE_DIST: 1e5,
+            CAMERA_SHAKE_DIST: 1e45,
             MAX_CHAT_MESSAGE_LENGTH: 750,
             SERVER_TPS: 30,
             MAX_PARTICLES: 1e3,
