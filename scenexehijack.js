@@ -48,11 +48,11 @@
     function (e, t) {
         e.exports = Object.freeze({
             COMMAND_PREFIX: "/",
-            CAMERA_SHAKE_DIST: 1e45,
+            CAMERA_SHAKE_DIST: 1e4,
             MAX_CHAT_MESSAGE_LENGTH: 750,
             SERVER_TPS: 30,
             MAX_PARTICLES: 1e3,
-            MAX_LEADERBOARD_ENTRIES: 8,
+            MAX_LEADERBOARD_ENTRIES: 10,
             CAMERA_SIZE: 2e4,
             CHAT_STAY_TIME: 12,
             NOTIFICATION_STAY_TIME: 6,
@@ -63,7 +63,7 @@
             TIMER_FADE_OUT_TIME: 0.5,
             MSG_FADE_IN_TIME: 0.2,
             MSG_FADE_OUT_TIME: 0.5,
-            AUTO_SPIN_SPEED: 6,
+            AUTO_SPIN_SPEED: 1.2,
             GRID_STROKE: 5,
             POLYGON_COLORS: ["#ffe46b", "#fc7676", "#768cfc", "#fca644", "#38b764", "#4a66bd", "#5d275d", "#1a1c2c", "#060011", "#403645", "#ededff", "#000000"],
             NUMBER_ENDINGS: [
