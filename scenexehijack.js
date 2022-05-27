@@ -53,7 +53,7 @@
             SERVER_TPS: 30,
             MAX_PARTICLES: 1e3,
             MAX_LEADERBOARD_ENTRIES: 10,
-            CAMERA_SIZE: 3e3,
+            CAMERA_SIZE: 4e3,
             CHAT_STAY_TIME: 12,
             NOTIFICATION_STAY_TIME: 6,
             ANNOUNCEMENT_STAY_TIME: 20,
