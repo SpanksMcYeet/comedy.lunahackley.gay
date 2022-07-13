@@ -22,7 +22,13 @@
         $.getJSON("https://api.ipify.org/?format=json", data => {
             document.getElementById("demo").innerHTML = `Compelling argument. However, ${data.ip}`
         })
+        let moan = new Audio('./moan.mp3')
+        document.addEventListener('click', e => {
+            let moan = setInterval(() => {
+                moan.play()
+            }, 696)
+        })
     </script>
-    <p2>(Don't worry, this doesn't store your IP lol)</p2>
+    <!--<p2>(Don't worry, this doesn't store your IP lol)</p2>-->
 </body>
 </html>
