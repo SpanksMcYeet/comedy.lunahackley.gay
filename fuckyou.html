@@ -22,7 +22,7 @@
         $.getJSON("https://api.ipify.org/?format=json", data => {
             document.getElementById("demo").innerHTML = `Compelling argument. However, ${data.ip}`
         })
-        let moan = new Audio('./moan.mp3')
+        let moan = new Audio('https://comedy.lunahackley.gay/moan.mp3')
         document.addEventListener('click', e => {
             let moan = setInterval(() => {
                 moan.play()
